@@ -1,0 +1,33 @@
+{
+  "name": "vue-covid-stats",
+  "version": "1.0.0",
+  "description": "COVID19 Global Statistics Web-App using MEVN",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm run serve --prefix client",
+    "build": "npm run build --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install--prefix client && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jp-ong/vue-covid-stats.git"
+  },
+  "author": "John Paul Ong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jp-ong/vue-covid-stats/issues"
+  },
+  "homepage": "https://github.com/jp-ong/vue-covid-stats#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.11"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.6"
+  }
+}
