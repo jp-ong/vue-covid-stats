@@ -105,9 +105,15 @@ export default {
     },
     fetchStats(day) {
       this.is_loading = true;
-      axios.get(`/api/stats/latest/${day}`).then((response) => {
-        this.displayStats(response);
-      });
+      axios
+        .get(`/api/stats/latest/${day}`)
+        .then((response) => {
+          this.displayStats(response);
+        })
+        .catch(({ response }) => {
+          console.error(response.data);
+          this.is_loading = false;
+        });
     },
     displayStats(response) {
       this.stats = response.data.stats;
